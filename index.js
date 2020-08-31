@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
+const path = require('path');
 const app = express()
 const PORT = 8080
 const Recipe = require('./RecipeModel');
@@ -17,7 +17,7 @@ mongoose.connect(db_conString, {
 
 
 
-app.use('/', (req, res) => {
+app.use('/api', (req, res) => {
     // res.json({ "mess": "Hello Would!" })
     Recipe.findById('5f4cbf6f2b491f0fac503105', (err, recipe) => {
         if (err) { return res.json({ err }) }
@@ -31,6 +31,10 @@ app.use('/', (req, res) => {
 app.use('/helloworld', (req, res) => {
     res.json({ "mess": "Hello Would!" })
 })
+
+app.use('/', function (req, res) {
+    res.sendFile(path.join(__dirname + '/mid.htm'));
+});
 
 app.listen(process.env.PORT || PORT, () => { console.log("Server started on http://localhost:" + PORT) })
 

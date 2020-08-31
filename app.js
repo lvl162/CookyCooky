@@ -22,8 +22,9 @@ app.listen(PORT, () => { console.log("Server started on http://localhost:" + POR
 
 module.exports = app;
 
-// const recipes = require('./recipes_2.json')
-// import data to database
+
+// const Recipe = require('./RecipeModel')
+// const recipes = require('./temp.json')
 // const importData = async (recipes) => {
 //     try {
 //         await Recipe.create(recipes)
@@ -33,4 +34,4 @@ module.exports = app;
 //         console.log(err);
 //     }
 // }
-//importData(recipes)
+// importData(recipes)
