@@ -28,6 +28,10 @@ app.use('/', (req, res) => {
     })
 })
 
+app.use('/helloworld', (req, res) => {
+    res.json({ "mess": "Hello Would!" })
+})
+
 app.listen(process.env.PORT || PORT, () => { console.log("Server started on http://localhost:" + PORT) })
 
 
