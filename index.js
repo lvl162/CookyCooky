@@ -18,14 +18,14 @@ mongoose.connect(db_conString, {
 
 
 app.use('/', (req, res) => {
-    //res.json({ "mess": "Hello Would!" })
-    Recipe.findById('5f4cbf6f2b491f0fac503105', (err, recipe) => {
-        if (err) { return res.json({ err }) }
-        res.json({
-            name: recipe.name,
-            nguyen_lieu: recipe.ingredients
-        })
-    })
+    res.json({ "mess": "Hello Would!" })
+    // Recipe.findById('5f4cbf6f2b491f0fac503105', (err, recipe) => {
+    //     if (err) { return res.json({ err }) }
+    //     res.json({
+    //         name: recipe.name,
+    //         nguyen_lieu: recipe.ingredients
+    //     })
+    // })
 })
 
 app.listen(PORT, () => { console.log("Server started on http://localhost:" + PORT) })
