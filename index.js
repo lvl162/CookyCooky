@@ -40,5 +40,6 @@ app.listen(process.env.PORT || PORT, () => { console.log("Server started on http
 
 
 
-
+const number = await Model.countDocuments();
+console.log(number);
 module.exports = app
